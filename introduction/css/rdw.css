@@ -66,7 +66,7 @@ body {
 
 .facts {
   grid-area: facts;
-  border: 1px solid #0099cc;
+  border: 1px solid #0a161a;
   background-color: beige;
   padding: 10px;
 }
