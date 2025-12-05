@@ -1,45 +1,49 @@
 body {
-    background-color: #f5f5dc; 
+    background-color: #f8f8f8;
 }
 
 .jumbotron {
-    background-color: #444444; 
-    color: white; 
+    background-color: #ffffff; 
+    color: #333333; 
     margin-bottom: 0;
     padding-top: 40px;
     padding-bottom: 40px;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 .jumbotron h1 {
-    font-weight: 500;
+    font-weight: 600;
+}
+
+.jumbotron p {
+    color: #666666;
 }
 
 .container {
-    background-color: #d3d3d3; 
+    background-color: #f8f8f8; 
     padding-top: 30px;
     padding-bottom: 30px;
-    border-radius: 4px;
     margin-top: 20px;
 }
 
 h3 {
-    color: #444444; 
-    border-bottom: 2px solid #a0b49f; 
+    color: #007aff; /* Soft Blue Accent */
+    border-bottom: 2px solid #007aff; 
     padding-bottom: 8px;
     margin-bottom: 15px;
-    font-weight: 600;
+    font-weight: 500;
 }
 
 p {
     color: #333333; 
-    font-size: 1.05em;
+    font-size: 1em;
     margin-bottom: 5px;
 }
 
 .col-sm-4 {
-    padding: 15px;
-    margin-bottom: 15px;
-    background-color: white; 
-    border-radius: 4px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #ffffff; /* Pure White Sections */
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Very light shadow */
 }
