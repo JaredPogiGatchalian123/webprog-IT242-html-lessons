@@ -1,57 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>WEBPROG IT242 Introduction  Jared Christian M. Gatchalian</title>  
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
- 
-<h1>Personal Profile Web page </h1>
-<p>
- 
-About Me<br>
-( Do not include birthdate / age / contact infor`mation)<br>
-Education / Achievements<br>
-- Senior High School Graduate in Asia Pacific College <br>
-Course <br>
-- BSIT <br>
-IT Experience<br>
-- Best Coder In the World <br>
-Hobbies & Interest<br>
-- I like to play video games <br>
-- I like to watch movies <br>
-- I like to listen to music <br>
-Goals In Life / Dream<br>
- - My goal in life is to graduate and to become a successful IT professional landing a 6 digits salary :D <br>
-Picture Gallery<br>
- <img src="https://as-prod.asyncgw.teams.microsoft.com/v1/objects/0-ea-d12-110f24fb12260a3090cdd59e119fb42b/views/imgpsh_fullsize" alt="Girl with a jacket" width="500" height="600">
-</p>
- 
-<br>
 
- <div class="container-fluid mt-3">
-  <h1>Responsive Auto Layout Columns</h1>
-  <p>In Bootstrap 5, there is an easy way to create equal width columns: just use the <code>.col-md</code> class on a specified number of col elements. Bootstrap will recognize how many columns there are, and each column will get the same width.</p>
-  <p>If the screen size is <strong>less than 768px</strong>, the columns will stack horizontally.</p>
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md bg-primary text-white">1 of 2</div>
-      <div class="col-md bg-dark text-white">2 of 2</div>
-    </div>  
-  </div>
-  <br>
-  
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-md bg-primary text-white">1 of 4</div>
-      <div class="col-md bg-dark text-white">2 of 4</div>
-      <div class="col-md bg-primary text-white">3 of 4</div>
-      <div class="col-md bg-dark text-white">4 of 4</div>
-    </div>  
+<div class="jumbotron text-center">
+  <h1>Jared Christian's Personal Page</h1>
+  <p>Resize this responsive page to see the effect!</p> 
+</div>
+    
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>About me:</h3>
+      <p>My name is Jared Christian Marcos Gatchalian"</p>
+      <p>Im currently a 2nd Year IT Student in Asia Pacific College</p>
+      <p>I am 19 years old</p>
+      <p>My birthday is in September 10, 2006</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>My IT Skills</h3>
+      <p>HTML/CSS</p>
+      <p>Python</p>
+      <p>Java</p>
+      <p>MYSQL</p>
+      <p>Outsystems</p>
+      <p>Flutter</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>My Hobbies</h3>        
+      <p>I like to play video games</p>
+      <p>I like to listen to music</p>
+      <p>I like to watch some movies</p>
+      <p>I like to sleep alot</p>
+    </div>
   </div>
 </div>
-  
+
 </body>
 </html>

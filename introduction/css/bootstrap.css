@@ -1,0 +1,74 @@
+.jumbotron {
+    background-color: #2c3e50;
+    color: white;
+    margin-bottom: 0;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-radius: 0 !important;
+}
+
+.jumbotron h1 {
+    font-size: 3em;
+    font-weight: 700;
+}
+
+.jumbotron p {
+    font-size: 1.2em;
+    opacity: 0.8;
+}
+
+.container {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.col-sm-4 {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.col-sm-4:hover {
+    transform: translateY(-5px);
+}
+
+h3 {
+    color: #3498db;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.info-block {
+    background-color: #ecf0f1;
+}
+
+.skill-block {
+    background-color: #f7f9fb;
+}
+
+.hobby-block {
+    background-color: #ecf0f1;
+}
+
+.col-sm-4 p {
+    margin-bottom: 8px;
+    font-size: 1.05em;
+    line-height: 1.5;
+    color: #555;
+}
+
+.skill-block p {
+    font-weight: 700;
+    color: #2c3e50;
+    border-left: 3px solid #3498db;
+    padding-left: 10px;
+}
