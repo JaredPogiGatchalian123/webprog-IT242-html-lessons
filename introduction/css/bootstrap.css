@@ -1,16 +1,17 @@
 body {
-    background-color: #f0f2f5; /* Light, soft grey background */
+    background-color: #F4F6F9; /* Very light background */
     color: #333333; 
     font-family: Arial, sans-serif;
 }
 
 .jumbotron {
-    background-color: #ffffff; /* White header background */
-    color: #2c3e50; /* Dark text */
+    background-color: #2C3E50; /* Deep Blue Header */
+    
+    color: #ffffff; /* White text for contrast */
     margin-bottom: 0;
     padding-top: 60px;
     padding-bottom: 60px;
-    border-bottom: 3px solid #3498db; /* Strong blue accent line */
+    border-bottom: 3px solid #3498DB; /* Sky Blue accent line */
 }
 
 .jumbotron h1 {
@@ -20,20 +21,20 @@ body {
 }
 
 .jumbotron p {
-    color: #7f8c8d;
+    color: #ECF0F1; 
     font-size: 1.2em;
 }
 
 .container {
-    background-color: #f0f2f5;
+    background-color: #F4F6F9; /* Matches body background */
     padding-top: 30px;
     padding-bottom: 30px;
     margin-top: 0;
 }
 
 h3 {
-    color: #3498db; /* Primary accent blue */
-    border-bottom: 2px solid #ecf0f1; /* Light grey bottom border */
+    color: #3498DB; /* Sky Blue accent for headers */
+    border-bottom: 2px solid #ECF0F1; 
     padding-bottom: 10px;
     margin-bottom: 15px;
     font-weight: 600;
@@ -60,9 +61,10 @@ p {
     padding: 25px;
     margin-bottom: 30px;
     background-color: #ffffff; /* Pure white card background */
-    border-radius: 8px; /* Slightly rounded corners */
+    border-radius: 8px; /* Rounded corners */
     /* Subtle box shadow for depth */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
+    /* Ensures background stretches as much as possible in Bootstrap 3 */
     min-height: 1px;
     transition: box-shadow 0.3s ease;
 }
