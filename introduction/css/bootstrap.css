@@ -1,46 +1,48 @@
 body {
-    background-color: #222222; 
-    color: #f0f0f0;
+    background-color: #121212; /* Very dark background */
+    color: #e0e0e0; /* Off-white text */
 }
 
 .jumbotron {
-    background-color: #1a1a1a; 
+    background-color: #1e1e1e; /* Darker header background */
     color: #ffffff; 
     margin-bottom: 0;
-    padding-top: 40px;
-    padding-bottom: 40px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     border-bottom: 1px solid #333333;
 }
 
 .jumbotron h1 {
     font-weight: 700;
+    letter-spacing: 1px;
 }
 
 .jumbotron p {
-    color: #aaaaaa;
+    color: #b0b0b0;
 }
 
 .container {
-    background-color: #222222; 
-    padding-top: 30px;
-    padding-bottom: 30px;
+    background-color: #121212;
+    padding-top: 40px;
+    padding-bottom: 40px;
     margin-top: 20px;
 }
 
 h3 {
-    color: #4a90e2; 
-    border-bottom: 2px solid #4a90e2; 
+    color: #8c9eff; /* A soft, modern indigo accent */
+    border-bottom: 2px solid #8c9eff; 
     padding-bottom: 8px;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
     font-weight: 600;
     text-transform: uppercase;
+    font-size: 1.5em;
 }
 
 p {
-    color: #f0f0f0; 
-    font-size: 1.05em;
-    margin-bottom: 10px;
-    line-height: 1.5;
+    color: #e0e0e0; 
+    font-size: 1em;
+    margin-bottom: 8px;
+    line-height: 1.6;
 }
 
 .row {
@@ -49,10 +51,17 @@ p {
     margin-right: -15px;
 }
 .col-sm-4 {
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #2d2d2d; 
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); 
+    padding: 25px; /* Increased padding */
+    margin-bottom: 30px; /* Increased bottom margin */
+    background-color: #1e1e1e; /* Card background matches header */
+    border-radius: 10px; /* More rounded corners */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Stronger, defined shadow */
     min-height: 1px;
+    transition: transform 0.3s ease; /* Add a slight hover effect */
+}
+
+/* Optional: Add a subtle hover effect to the sections */
+.col-sm-4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.7);
 }
