@@ -5,7 +5,8 @@ body {
 }
 
 .jumbotron {
-    background-color: #2C3E50; /* Deep Blue Header */
+    /* *** FIX: Added !important to force this color to load *** */
+    background-color: #2C3E50 !important; 
     
     color: #ffffff; /* White text for contrast */
     margin-bottom: 0;
@@ -61,14 +62,12 @@ p {
     padding: 25px;
     margin-bottom: 30px;
     background-color: #ffffff; /* Pure white card background */
-    border-radius: 8px; /* Rounded corners */
-    /* Subtle box shadow for depth */
+    border-radius: 8px; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); 
-    /* Ensures background stretches as much as possible in Bootstrap 3 */
     min-height: 1px;
     transition: box-shadow 0.3s ease;
 }
 
 .col-sm-4:hover {
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
 }
