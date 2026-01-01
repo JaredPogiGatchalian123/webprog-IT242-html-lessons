@@ -1,8 +1,16 @@
+/* ==========================================================================
+   1. GLOBAL RESET & SETUP
+   ========================================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', system-ui, sans-serif;
   background-color: #050505;
@@ -17,6 +25,7 @@ body {
   padding: 0 30px;
 }
 
+/* Red Ambient Background Glow */
 .pageGlow {
   position: fixed;
   top: 0;
@@ -28,6 +37,9 @@ body {
   z-index: -1;
 }
 
+/* ==========================================================================
+   2. LANDING SECTION
+   ========================================================================== */
 .landingSection {
   min-height: 100vh;
   display: flex;
@@ -78,7 +90,7 @@ body {
   font-weight: 700;
   font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: 0.3s ease;
 }
 
 .primaryButton:hover {
@@ -86,6 +98,9 @@ body {
   box-shadow: 0 10px 25px rgba(255, 77, 77, 0.4);
 }
 
+/* ==========================================================================
+   3. CHARACTER ANIMATION
+   ========================================================================== */
 .myCharacter {
   flex: 0.8;
   display: flex;
@@ -101,10 +116,16 @@ body {
 
 @keyframes floatEffect {
   0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  50%  { transform: translateY(-20px); }
 }
 
-.aboutSection, .gamesSection {
+/* ==========================================================================
+   4. COMMON SECTION STYLING
+   ========================================================================== */
+.aboutSection, 
+.gamesSection, 
+.gallerySection, 
+.socialsSection {
   padding: 120px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -116,50 +137,268 @@ body {
   font-weight: 800;
 }
 
-.descriptionCard {
+/* ==========================================================================
+   5. ABOUT GRID
+   ========================================================================== */
+.aboutGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.infoCard {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 50px;
+  padding: 40px;
   border-radius: 20px;
-  font-size: 22px;
+  transition: 0.3s;
+}
+
+.infoCard:hover {
+  border-color: #ff4d4d;
+  transform: translateY(-5px);
+  background: rgba(255, 77, 77, 0.02);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.infoCard h4 {
+  font-size: 24px;
+  color: #ff4d4d;
+  font-weight: 700;
+}
+
+.infoCard p {
+  font-size: 18px;
   color: #a1a1aa;
 }
 
+/* ==========================================================================
+   6. GAMES GRID
+   ========================================================================== */
 .interestsWrapper {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   gap: 25px;
-  flex-wrap: wrap;
 }
 
 .interestCard {
-  flex: 1;
-  min-width: 280px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 40px 20px;
+  padding: 35px 15px;
   border-radius: 16px;
   text-align: center;
-  transition: all 0.3s ease;
+  transition: 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .interestCard:hover {
   border-color: #ff4d4d;
-  background: rgba(255, 77, 77, 0.03);
   transform: translateY(-8px);
 }
 
-.categoryIcon {
-  font-size: 50px;
-  display: block;
+.gameIcon {
+  width: 55px;
+  height: 55px;
   margin-bottom: 15px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 77, 77, 0.2));
 }
 
-@media (max-width: 1024px) {
+/* ==========================================================================
+   7. FILTERABLE GALLERY
+   ========================================================================== */
+.galleryNav {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #a1a1aa;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.filterBtn.active, 
+.filterBtn:hover {
+  border-color: #ff4d4d;
+  color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.05);
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.galleryItem {
+  overflow: hidden;
+  border-radius: 12px;
+  height: 300px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.galleryItem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s;
+}
+
+.galleryItem:hover img {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.galleryItem.hide {
+  display: none;
+}
+
+/* ==========================================================================
+   8. SOCIALS SECTION
+   ========================================================================== */
+.socialsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.socialCard {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 16px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.socialCard:hover {
+  border-color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.05);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 30px rgba(255, 77, 77, 0.1);
+}
+
+.socialCard .socialIcon {
+  font-size: 32px;
+  margin-bottom: 15px;
+  display: block;
+}
+
+.socialCard h4 {
+  color: #ff4d4d;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.socialCard p {
+  color: #a1a1aa;
+  font-size: 14px;
+}
+
+/* ==========================================================================
+   9. FOOTER & LIGHTBOX MODAL
+   ========================================================================== */
+.miniFooter {
+  padding: 40px 0;
+  text-align: center;
+  background: #080808;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  padding-top: 50px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 800px;
+  border-radius: 10px;
+  border: 2px solid #ff4d4d;
+  animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+  from {transform: scale(0.5); opacity: 0;}
+  to {transform: scale(1); opacity: 1;}
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   10. LOAD MORE SYSTEM
+   ========================================================================== */
+.galleryItem.hidden-moment {
+  display: none;
+}
+
+.galleryControl {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ==========================================================================
+   11. RESPONSIVE QUERIES
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .interestsWrapper { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 900px) {
+  .aboutGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .interestsWrapper { grid-template-columns: repeat(2, 1fr); }
   .landingSection {
     flex-direction: column;
     text-align: center;
     padding: 100px 0;
   }
-  .displayName { font-size: 70px; }
-  .myCharacter { order: -1; } 
+  .displayName { font-size: 60px; }
+  .myCharacter { order: -1; }
+  .sectionHeading { font-size: 42px; }
+}
+
+@media (max-width: 480px) {
+  .socialsGrid { grid-template-columns: 1fr; }
 }
