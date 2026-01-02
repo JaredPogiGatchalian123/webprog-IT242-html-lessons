@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // 2. Load More Logic
+  // 2. Load More / See Less Toggle Logic
   const loadMoreBtn = document.getElementById("loadMoreBtn");
   const galleryItems = document.querySelectorAll(".galleryItem");
   const initialCount = 8; // Number of items to show at start
@@ -20,20 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
         item.classList.remove("hidden-moment");
       }
     });
-    if (loadMoreBtn && galleryItems.length <= initialCount) {
-        loadMoreBtn.style.display = "none";
-    }
   }
 
   applyInitialLimit();
 
   if (loadMoreBtn) {
     loadMoreBtn.addEventListener("click", () => {
-      const hiddenItems = document.querySelectorAll(".galleryItem.hidden-moment");
-      hiddenItems.forEach((item) => {
-        item.classList.remove("hidden-moment");
-      });
-      loadMoreBtn.style.display = "none";
+      const isExpanded = loadMoreBtn.innerText === "See Less Pictures";
+
+      if (isExpanded) {
+        applyInitialLimit();
+        loadMoreBtn.innerText = "Show More Pictures";
+        document.getElementById("gallery").scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        galleryItems.forEach(item => item.classList.remove("hidden-moment"));
+        loadMoreBtn.innerText = "See Less Pictures";
+      }
     });
   }
 
@@ -44,15 +46,17 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => {
       document.querySelector(".filterBtn.active").classList.remove("active");
       btn.classList.add("active");
-      
       const filterValue = btn.getAttribute("data-filter");
       
-      // When filtering, we show all items in that category (no limit)
       galleryItems.forEach(item => {
-        item.classList.remove("hidden-moment"); // Remove load more limit when filtering
+        item.classList.remove("hidden-moment"); 
         if (filterValue === "all") {
-          applyInitialLimit(); // Re-apply limit if back to 'All'
-          if (galleryItems.length > initialCount) loadMoreBtn.style.display = "inline-block";
+          applyInitialLimit(); 
+          if (loadMoreBtn) {
+            loadMoreBtn.style.display = "inline-block";
+            loadMoreBtn.innerText = "Show More Pictures";
+          }
+          item.classList.remove("hide");
         } else if (item.getAttribute("data-category") === filterValue) {
           item.classList.remove("hide");
           if (loadMoreBtn) loadMoreBtn.style.display = "none";

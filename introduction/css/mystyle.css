@@ -1,6 +1,4 @@
-/* ==========================================================================
-   1. GLOBAL RESET & SETUP
-   ========================================================================== */
+
 * {
   margin: 0;
   padding: 0;
@@ -25,7 +23,7 @@ body {
   padding: 0 30px;
 }
 
-/* Red Ambient Background Glow */
+/* Red Ambient Background Glow with the help of AI hehe */
 .pageGlow {
   position: fixed;
   top: 0;
@@ -37,9 +35,7 @@ body {
   z-index: -1;
 }
 
-/* ==========================================================================
-   2. LANDING SECTION
-   ========================================================================== */
+
 .landingSection {
   min-height: 100vh;
   display: flex;
@@ -98,9 +94,7 @@ body {
   box-shadow: 0 10px 25px rgba(255, 77, 77, 0.4);
 }
 
-/* ==========================================================================
-   3. CHARACTER ANIMATION
-   ========================================================================== */
+
 .myCharacter {
   flex: 0.8;
   display: flex;
@@ -119,9 +113,7 @@ body {
   50%  { transform: translateY(-20px); }
 }
 
-/* ==========================================================================
-   4. COMMON SECTION STYLING
-   ========================================================================== */
+
 .aboutSection, 
 .gamesSection, 
 .gallerySection, 
@@ -137,9 +129,7 @@ body {
   font-weight: 800;
 }
 
-/* ==========================================================================
-   5. ABOUT GRID
-   ========================================================================== */
+
 .aboutGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -178,9 +168,6 @@ body {
   color: #a1a1aa;
 }
 
-/* ==========================================================================
-   6. GAMES GRID
-   ========================================================================== */
 .interestsWrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -212,9 +199,7 @@ body {
   filter: drop-shadow(0 0 10px rgba(255, 77, 77, 0.2));
 }
 
-/* ==========================================================================
-   7. FILTERABLE GALLERY
-   ========================================================================== */
+
 .galleryNav {
   display: flex;
   gap: 15px;
@@ -266,13 +251,17 @@ body {
   opacity: 1;
 }
 
-.galleryItem.hide {
+.galleryItem.hide, 
+.galleryItem.hidden-moment {
   display: none;
 }
 
-/* ==========================================================================
-   8. SOCIALS SECTION
-   ========================================================================== */
+.galleryControl {
+  text-align: center;
+  margin-top: 40px;
+}
+
+
 .socialsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -316,9 +305,8 @@ body {
   font-size: 14px;
 }
 
-/* ==========================================================================
-   9. FOOTER & LIGHTBOX MODAL
-   ========================================================================== */
+/* footer section */
+
 .miniFooter {
   padding: 40px 0;
   text-align: center;
@@ -326,10 +314,11 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+
 .modal {
   display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 2000;
   padding-top: 50px;
   left: 0;
   top: 0;
@@ -364,21 +353,18 @@ body {
   cursor: pointer;
 }
 
-/* ==========================================================================
-   10. LOAD MORE SYSTEM
-   ========================================================================== */
-.galleryItem.hidden-moment {
-  display: none;
-}
-
-.galleryControl {
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
   text-align: center;
-  margin-top: 40px;
+  color: #ccc;
+  padding: 10px 0;
+  font-size: 20px;
 }
 
-/* ==========================================================================
-   11. RESPONSIVE QUERIES
-   ========================================================================== */
+/* this is for the mobile responsive */
+
 @media (max-width: 1100px) {
   .interestsWrapper { grid-template-columns: repeat(3, 1fr); }
 }
@@ -400,5 +386,6 @@ body {
 }
 
 @media (max-width: 480px) {
+  .interestsWrapper { grid-template-columns: 1fr; }
   .socialsGrid { grid-template-columns: 1fr; }
 }
