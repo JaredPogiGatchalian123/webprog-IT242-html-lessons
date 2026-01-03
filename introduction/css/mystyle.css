@@ -23,7 +23,7 @@ body {
   padding: 0 30px;
 }
 
-/* Red Ambient Background Glow with the help of AI hehe */
+/* Red Ambient Background Glow */
 .pageGlow {
   position: fixed;
   top: 0;
@@ -35,7 +35,7 @@ body {
   z-index: -1;
 }
 
-
+/* LANDING SECTION */
 .landingSection {
   min-height: 100vh;
   display: flex;
@@ -94,7 +94,7 @@ body {
   box-shadow: 0 10px 25px rgba(255, 77, 77, 0.4);
 }
 
-
+/* MY CHARACTER ANIMATION FLOAT */
 .myCharacter {
   flex: 0.8;
   display: flex;
@@ -113,7 +113,6 @@ body {
   50%  { transform: translateY(-20px); }
 }
 
-
 .aboutSection, 
 .gamesSection, 
 .gallerySection, 
@@ -129,7 +128,7 @@ body {
   font-weight: 800;
 }
 
-
+/* ABOUT GRID */
 .aboutGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -168,6 +167,7 @@ body {
   color: #a1a1aa;
 }
 
+/* THIS IS FOR MY GAMES GRID */
 .interestsWrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -199,7 +199,7 @@ body {
   filter: drop-shadow(0 0 10px rgba(255, 77, 77, 0.2));
 }
 
-
+/* Filterable Image */
 .galleryNav {
   display: flex;
   gap: 15px;
@@ -261,7 +261,7 @@ body {
   margin-top: 40px;
 }
 
-
+/* SOCIALS SECTION */
 .socialsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -305,15 +305,13 @@ body {
   font-size: 14px;
 }
 
-/* footer section */
-
+/* THIS IS FOR THE FOOTER AND IMAGE VIEWER */
 .miniFooter {
   padding: 40px 0;
   text-align: center;
   background: #080808;
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
-
 
 .modal {
   display: none;
@@ -324,15 +322,17 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(10px);
 }
 
 .modal-content {
   margin: auto;
   display: block;
-  width: 80%;
-  max-width: 800px;
+  width: auto;
+  max-width: 90%;
+  height: 80vh; 
+  object-fit: contain; 
   border-radius: 10px;
   border: 2px solid #ff4d4d;
   animation: zoomIn 0.3s ease;
@@ -351,6 +351,11 @@ body {
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: #ff4d4d;
 }
 
 #caption {
@@ -363,8 +368,7 @@ body {
   font-size: 20px;
 }
 
-/* this is for the mobile responsive */
-
+/* THIS IS FOR MOBILE RESPONSIVE */
 @media (max-width: 1100px) {
   .interestsWrapper { grid-template-columns: repeat(3, 1fr); }
 }
@@ -388,4 +392,10 @@ body {
 @media (max-width: 480px) {
   .interestsWrapper { grid-template-columns: 1fr; }
   .socialsGrid { grid-template-columns: 1fr; }
+  
+  .modal-content {
+    width: 95%;
+    height: auto;
+    max-height: 70vh;
+  }
 }

@@ -67,21 +67,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 4. Lightbox Modal
+  // 4. Lightbox Modal with Navigation
   const modal = document.getElementById("imageModal");
   const modalImg = document.getElementById("imgFull");
   const captionText = document.getElementById("caption");
   const closeBtn = document.querySelector(".close");
-  const galleryImages = document.querySelectorAll(".galleryItem img");
+  
+  // Track current image index for navigation
+  let currentIndex = 0;
+  let visibleImages = [];
 
-  galleryImages.forEach(img => {
-    img.addEventListener("click", () => {
-      modal.style.display = "block";
-      modalImg.src = img.src;
-      captionText.innerHTML = img.alt;
+  // Function to update the modal content
+  function updateModal(index) {
+    const img = visibleImages[index].querySelector("img");
+    modalImg.src = img.src;
+    captionText.innerHTML = img.alt;
+    currentIndex = index;
+  }
+
+  // Open modal when clicking any image
+  galleryItems.forEach(item => {
+    item.addEventListener("click", () => {
+      // Get only images currently not hidden by filters
+      visibleImages = Array.from(galleryItems).filter(i => !i.classList.contains('hide') && !i.classList.contains('hidden-moment'));
+      const index = visibleImages.indexOf(item);
+      
+      if (index !== -1) {
+        modal.style.display = "block";
+        updateModal(index);
+      }
     });
   });
 
+  // Close logic
   if(closeBtn) {
     closeBtn.onclick = () => { modal.style.display = "none"; };
   }
@@ -89,4 +107,19 @@ document.addEventListener("DOMContentLoaded", () => {
   window.onclick = (event) => {
     if (event.target == modal) { modal.style.display = "none"; }
   };
+
+  // Keyboard Support (Arrows and Escape)
+  document.addEventListener("keydown", (e) => {
+    if (modal.style.display === "block") {
+      if (e.key === "ArrowRight") {
+        let next = (currentIndex + 1) % visibleImages.length;
+        updateModal(next);
+      } else if (e.key === "ArrowLeft") {
+        let prev = (currentIndex - 1 + visibleImages.length) % visibleImages.length;
+        updateModal(prev);
+      } else if (e.key === "Escape") {
+        modal.style.display = "none";
+      }
+    }
+  });
 });
