@@ -1,3 +1,4 @@
+/* Global Reset & Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -16,13 +17,14 @@ body {
   overflow-x: hidden;
 }
 
+/* Layout Container (Centers content) */
 .layoutWidth {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 30px;
 }
 
-/* --- ADDED TOP NAVIGATION STYLES --- */
+/* Top Navigation Bar */
 .topNav {
   position: fixed;
   top: 0;
@@ -34,6 +36,7 @@ body {
   background: transparent;
 }
 
+/* Navbar style when scrolled */
 .topNav.scrolled {
   padding: 15px 0;
   background: rgba(5, 5, 5, 0.9);
@@ -47,13 +50,17 @@ body {
   align-items: center;
 }
 
+/* Website logo / name */
 .logo {
   font-size: 24px;
   font-weight: 900;
   color: #ff4d4d;
   letter-spacing: 1px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
+/* Navigation links */
 .navLinks {
   display: flex;
   gap: 30px;
@@ -72,7 +79,7 @@ body {
   color: #ff4d4d;
 }
 
-/* HAMBURGER TOGGLE */
+/* Hamburger Menu (Mobile Navigation) */
 .menuToggle {
   display: none;
   flex-direction: column;
@@ -87,6 +94,7 @@ body {
   transition: 0.3s;
 }
 
+/* Mobile & Tablet Navigation for ≤768px (Navigation-specific) */
 @media (max-width: 768px) {
   .menuToggle {
     display: flex;
@@ -111,12 +119,13 @@ body {
     right: 0;
   }
 
+  /* Hamburger animation into X icon */
   .menuToggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
   .menuToggle.is-active .bar:nth-child(2) { opacity: 0; }
   .menuToggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
 }
 
-/* --- YOUR ORIGINAL STYLES --- */
+/* Background Glow Effect */
 .pageGlow {
   position: fixed;
   top: 0;
@@ -128,6 +137,7 @@ body {
   z-index: -1;
 }
 
+/* Landing / Hero Section */
 .landingSection {
   min-height: 100vh;
   display: flex;
@@ -154,6 +164,7 @@ body {
   margin: 10px 0;
 }
 
+/* Large display name text */
 .displayName {
   font-size: 110px;
   color: #ff4d4d;
@@ -170,6 +181,7 @@ body {
   margin-bottom: 40px;
 }
 
+/* Call-to-action buttons */
 .ctaButtons {
   display: flex;
   gap: 20px;
@@ -209,6 +221,7 @@ body {
   transform: translateY(-3px);
 }
 
+/* Character / Illustration Section */
 .myCharacter {
   flex: 0.8;
   display: flex;
@@ -223,12 +236,14 @@ body {
   animation: floatEffect 5s ease-in-out infinite;
 }
 
+/* Floating animation for character */
 @keyframes floatEffect {
   0% { transform: translateY(0px); }
   50% { transform: translateY(-25px); }
   100% { transform: translateY(0px); }
 }
 
+/* Main Content Sections (About, Games, Skills, Socials) */
 .aboutSection, 
 .gamesSection, 
 .skillsSection, 
@@ -237,6 +252,7 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+/* Section titles */
 .sectionHeading {
   font-size: 56px;
   color: #ff4d4d;
@@ -244,6 +260,7 @@ body {
   font-weight: 800;
 }
 
+/* About Me Section Cards */
 .aboutGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -281,6 +298,7 @@ body {
   color: #a1a1aa;
 }
 
+/* Interests / Games Section */
 .interestsWrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -311,6 +329,7 @@ body {
   filter: drop-shadow(0 0 10px rgba(255, 77, 77, 0.2));
 }
 
+/* Skills Section */
 .skillsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -351,6 +370,7 @@ body {
   line-height: 1.4;
 }
 
+/* Social Media Section */
 .socialsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -394,6 +414,7 @@ body {
   font-size: 14px;
 }
 
+/* Footer */
 .miniFooter {
   padding: 40px 0;
   text-align: center;
@@ -401,8 +422,15 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* Responsive Layout Adjustments */
+
+/* Large tablets / small laptops */
 @media (max-width: 1100px) { .interestsWrapper { grid-template-columns: repeat(3, 1fr); } }
+
+/* Tablets */
 @media (max-width: 900px) { .aboutGrid { grid-template-columns: 1fr; } }
+
+/* Tablets & phones layout adjustments */
 @media (max-width: 768px) {
   .interestsWrapper { grid-template-columns: repeat(2, 1fr); }
   .landingSection { flex-direction: column; text-align: center; padding: 100px 0; }
@@ -411,6 +439,8 @@ body {
   .sectionHeading { font-size: 42px; }
   .ctaButtons { justify-content: center; }
 }
+
+/* Small phones */
 @media (max-width: 480px) {
   .interestsWrapper { grid-template-columns: 1fr; }
   .socialsGrid { grid-template-columns: 1fr; }
