@@ -8,9 +8,27 @@
 </head>
 <body>
 
+  <nav class="topNav">
+    <div class="navContainer layoutWidth">
+      <div class="logo">JC</div>
+      <div class="menuToggle" id="mobile-menu">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+      <ul class="navLinks">
+        <li><a href="#home" class="navLink active" data-section="home">Home</a></li>
+        <li><a href="#about" class="navLink" data-section="about">About</a></li>
+        <li><a href="#games" class="navLink" data-section="games">Games</a></li>
+        <li><a href="#skills" class="navLink" data-section="skills">Skills</a></li>
+        <li><a href="#socials" class="navLink" data-section="socials">Socials</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="pageGlow"></div>
 
-  <section class="landingSection layoutWidth">
+  <section class="landingSection layoutWidth" id="home">
     <header class="landingContent">
       <span class="subHeading">Welcome to my Personal Web!</span>
       <h1>Hi, my name is</h1>
@@ -19,44 +37,45 @@
         This is my personal space on the internet, a place where I share parts of my life including my education, 
         the people who matter to me, the games I enjoy, and moments worth remembering.
       </p>
-      <button id="scrollBtn" class="primaryButton">Explore My World</button>
+      <div class="ctaButtons">
+        <button id="scrollBtn" class="primaryButton">Explore My World</button>
+        <button id="connectBtn" class="secondaryButton">Connect With Me</button>
+      </div>
     </header>
 
-   <figure class="myCharacter">
-  <img src="https://lh3.googleusercontent.com/u/0/d/1A4iLRBd37WbiwpTzRr1_K8ywNru9PR8p" alt="Jared Character Transparent" class="characterImage">
-</figure>
-</section>
+    <figure class="myCharacter">
+      <img src="https://lh3.googleusercontent.com/u/0/d/1A4iLRBd37WbiwpTzRr1_K8ywNru9PR8p" alt="Jared Character Transparent" class="characterImage">
+    </figure>
+  </section>
 
   <section class="aboutSection layoutWidth" id="about">
     <h3 class="sectionHeading">About Me</h3>
     <div class="aboutGrid">
       <article class="infoCard">
-  <div class="cardHeader"><span class="cardIcon">🎓</span><h4>Education</h4></div>
-  <p>
-    <strong>Bachelor of Science in Information Technology (BSIT)</strong><br>
-    Asia Pacific College<br>
-    Currently a second-year college student.
-  </p>
-  <p>
-    <strong>Senior High School (STEM-IT)</strong><br>
-    Asia Pacific College<br>
-    Completed Senior High School in 2023.
-  </p>
-</article>
+        <div class="cardHeader"><span class="cardIcon">🎓</span><h4>Education</h4></div>
+        <p>
+          <strong>Bachelor of Science in Information Technology (Currently 2nd Year) (BSIT)</strong><br>
+          Asia Pacific College<br>
+        </p>
+        <p>
+          <strong>Finished Senior High School (STEM-IT)</strong><br>
+          Asia Pacific College<br>
+        </p>
+      </article>
 
       <article class="infoCard">
-        <div class="cardHeader"><span class="cardIcon">💻</span><h4>IT Skills</h4></div>
-        <p>I have a background in Python and Java, with experience in Flutter for mobile development. I have also worked with Kotlin for Android development and utilized low-code platforms such as OutSystems and Microsoft Power Apps. Additionally, I have intermediate proficiency in HTML and CSS, with basic working knowledge of JavaScript. Lastly, I am knowledgeable with MySQL.</p>
+        <div class="cardHeader"><span class="cardIcon">💡</span><h4>Fun Fact!</h4></div>
+        <p>My favorite color is red. Even though I’m 5'3", I’m the tallest in my family. I have 4 dogs and 3 cats!</p>
       </article>
 
       <article class="infoCard">
         <div class="cardHeader"><span class="cardIcon">🎨</span><h4>Hobbies</h4></div>
-        <p>My hobbies include playing video games, which I find both fun and a great way to challenge myself, as well as listening to music to relax or get energized. I also enjoy watching movies and television series, exploring different genres and stories. In my free time, I often scroll through TikTok while relaxing in bed. Recently, I’ve also started working out regularly, and I enjoy jogging or going for walks whenever I have some free time to stay active and clear my mind!</p>
+        <p>I enjoy playing video games, listening to music, and watching movies. I also scroll through TikTok and recently started working out to stay active and clear my mind.</p>
       </article>
 
       <article class="infoCard">
         <div class="cardHeader"><span class="cardIcon">🚀</span><h4>Dream</h4></div>
-        <p>My dream is to become a successful IT professional, earning a six-figure income per month. Right now, I’m still exploring which specialty in the IT field I’m most passionate about, but I’m particularly interested in pursuing a career as a cloud technology professional. Ultimately, I aspire to achieve financial success and live a comfortable and happy life.</p>
+        <p>My dream is to become a successful IT professional, especially in cloud technology. I want financial success and a comfortable, happy life.</p>
       </article>
     </div>
   </section>
@@ -99,71 +118,83 @@
     </div>
   </section>
 
-  <section class="gallerySection layoutWidth" id="gallery">
-    <h3 class="sectionHeading">My Gallery</h3>
-    <div class="galleryNav">
-      <button class="filterBtn active" data-filter="all">All</button>
-      <button class="filterBtn" data-filter="family">Family</button>
-      <button class="filterBtn" data-filter="friends">Friends</button>
-      <button class="filterBtn" data-filter="pets">My Pets</button>
-    </div>
-    <div class="galleryGrid">
-      <div class="galleryItem" data-category="family"><img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/607597361_4454532614826758_1958894487618359103_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6DspJzlimpkQ7kNvwFC0Bxy&_nc_oc=AdlkD8in-j6PgBKbjwLLrhGT5R0-B_ZCNizJQco_6Bg1ya9b0bi22EBTgVflp8bp7jI&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=IImi6K8zIEG1h7QUpKqGxA&oh=00_Afp4wlAIhgUXyPHElru5HB2ahepmaiUV_cswgpI-Y1Jdog&oe=695C37A0" alt="Family"></div>
-      <div class="galleryItem" data-category="family"><img src="https://scontent.fmnl17-8.fna.fbcdn.net/v/t39.30808-6/504114979_4084758285129969_8643693314059576097_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=IFq1ErU66rsQ7kNvwECbVN5&_nc_oc=Adnb9HB3xDUFrywbqKzNG4hq4FkGRr8ZVOSbQLf_WtNXbpDQ8ckYg1EaefX5VZFCTzU&_nc_zt=23&_nc_ht=scontent.fmnl17-8.fna&_nc_gid=tAczww4Fb-yulLHyNB1oNg&oh=00_AfonRCh9liTXCdQ5EB-l1wPk7eqIYWSkuQ1R7Vma2trDOw&oe=695C3A39" alt="Family"></div>
-      <div class="galleryItem" data-category="family"><img src="https://scontent.fmnl17-5.fna.fbcdn.net/v/t39.30808-6/576916541_4238794319726364_6865110073841913717_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_ohc=zMN4uH2uYCYQ7kNvwHZXuk1&_nc_oc=AdmjVQ-oKmMtDC4GjXS5kSC5aBTVMdeMyf_rnIEfUIlN8xO-fyNyi1UOCvB0PDM2T6A&_nc_zt=23&_nc_ht=scontent.fmnl17-5.fna&_nc_gid=2_hJF97ldSBLdjUykmYHAw&oh=00_AfoDPPN75iI9Psr24Kd_seBBSUULx6SZQp9qwkJepwkuqw&oe=695C3B51" alt="Family"></div>
-      <div class="galleryItem" data-category="family"><img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/492086029_4039385986333866_9206139367105893523_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=rIEWeE0d650Q7kNvwFR3oHo&_nc_oc=Admf7MQMhis68vLkvxOK-1i7333i4ex-_W33kEeyr8e1PVy5-y8-xX3PaUrmUX5kNak&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=UEwnloBDSg8n1lsQhpAAYw&oh=00_AfoU_Xk6qlgBofR-YdrJgtxjJtxXHOLtPh2vLCDPZGN_Ww&oe=695C4B02" alt="Family"></div>
-      <div class="galleryItem" data-category="family"><img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/484790178_4155391634740859_2998337813760826170_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=86c6b0&_nc_ohc=-gLP9Q3k-LoQ7kNvwEKtu1C&_nc_oc=AdlLlFo6hdjEBW3-mqTquImzd5SFINMBbpeEcHwYkZITicTUM3316IySmMOOjcy27Fc&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=ANEfE9_Xh5kCArDGYSw5VA&oh=00_Afr-uQDJLpi43J2_v6zlYVrgGaUXfMqK5OCEN9tVtu8vYw&oe=695C2C22" alt="Family"></div>
-      <div class="galleryItem" data-category="family"><img src="https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-6/488259372_4019487681657030_1258567289344653590_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=75S7Knfw8lIQ7kNvwG9vCcO&_nc_oc=Adm6_81Xch7rsp25b4zHcCjiczoxV4g-6pQUVy8U3lnepIuIJupfM4HUT87IYMDE8e4&_nc_zt=23&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=WOMDxSSYdZK48tKorZfHwg&oh=00_Afq2o7bQM7iZROgqGKjBssqKdHXrfDJYC77X9fjKZf1H3A&oe=695C5A1F" alt="Family"></div>
-      <div class="galleryItem" data-category="family"><img src="https://lh3.googleusercontent.com/u/0/d/1terNyRWj6WgeC6sewd_hTtckzbheDnLi" alt="Family"></div>
-      <div class="galleryItem" data-category="family"><img src="https://lh3.googleusercontent.com/u/0/d/1iQc21H8dkcgPD9GBJOcDjm4OSTpoZ1F_" alt="Family"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/548151355_4184763031796160_6852839385559982656_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=mfd1lnelBvIQ7kNvwHiGHza&_nc_oc=AdmaxSbNetgBclTESnO41puXyoZfMEQBmDfK-E1gSWNnj0M7AZCunuYyqXhdV0Rhl3A&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=Zv-WfHO052vzwOcLAGG0wg&oh=00_AfpteqkX3pkDXMfPUwcjZCUr5WxDsVQ8PZY-3aZx9bf6AA&oe=695C55AB" alt="Friends"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://scontent.fmnl17-7.fna.fbcdn.net/v/t39.30808-6/547669680_4184763161796147_2357437943085128647_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6_EkAsFEhSYQ7kNvwHoSi0x&_nc_oc=AdmV1Krol4bOp_iL2_2GvQmzyX9CfLMt43H8Y9691l8P7qJQnbOcM_wio_W63u1Cu6k&_nc_zt=23&_nc_ht=scontent.fmnl17-7.fna&_nc_gid=wgApo1T0rWDkOyegIcvJ-A&oh=00_AfqoiMR6W8WR2CuacdoKJuNtAN1AwxQ49YT06Hs1RBDfcg&oe=695C484D" alt="Friends"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-6/547670419_4184763135129483_3808204209891983129_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=ykyUMxQ619EQ7kNvwEH-taU&_nc_oc=Adnr0gonQ8XcNSO6zfsZklI931nXkZbcCQ8ELrccdaViokrovnDuNMyJjrdD_BS-QPw&_nc_zt=23&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=u3PnZl5aVV1lWjrRoiusdA&oh=00_AfqtuHE01FFnnaB2zj6HNAO77dHM2Gr_-hBkUlVMp6VMNQ&oe=695C465D" alt="Friends"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://scontent.fmnl17-2.fna.fbcdn.net/v/t39.30808-6/547377053_4184762941796169_1108059585324387596_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=-BHx3v4DhHcQ7kNvwEmXICd&_nc_oc=AdkS_D_W4DPbkr8bDpEiyE-vTm_vIE-58sdoljOGhnvsgdaGRIhzFCucoueE6KM7_rc&_nc_zt=23&_nc_ht=scontent.fmnl17-2.fna&_nc_gid=PgZOqi8zyFv3my3P7K_whA&oh=00_AfrP8QW6GEPv0zzIKejJltar06TVJKpyuelWktMcwDcJ8Q&oe=695C36EB" alt="Friends"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-6/504260220_4086971184908679_9051923061549644920_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_ohc=m2Vk0VS3TL8Q7kNvwE7HW5a&_nc_oc=AdnKou35iihwUvPIw99koUNXd8u1NWeFEf8Q1L116HO7vglo4zqbDeWyy53O__lO_tQ&_nc_zt=23&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=rRxZOSQfH34kGIEYPFoijA&oh=00_Afqxuq6QOO4PnfFVFq_IYaFdYfax6JYI2XIeF8EekEFsHA&oe=695C3DA8" alt="Friends"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://scontent.fmnl17-4.fna.fbcdn.net/v/t39.30808-6/480460314_3975229542749511_2645665666071582134_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=833d8c&_nc_ohc=XQ5GfkUCJ-wQ7kNvwE5nJVE&_nc_oc=AdnT5zDuSs_tXt_URUVCZSAqeRtCdHtEASZ9PDPZ8rmMBPCncpfa8vJlP4L5xgmsylI&_nc_zt=23&_nc_ht=scontent.fmnl17-4.fna&_nc_gid=fvKRjjw0K8XFHXqUIFrlxw&oh=00_AfrmHUe7j_L1zT9oluFdcLYgfIhRzxgomS4ZS89iI4EwFg&oe=695C5E9E" alt="Friends"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://lh3.googleusercontent.com/u/0/d/1FMiqEcVDmByXmlqg7awXM6Ams7R4KlWw" alt="Friends"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://lh3.googleusercontent.com/d/19WNtkdNgxq3eDFRroRd2ln05GEXf28BD" alt="Friends"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://lh3.googleusercontent.com/u/0/d/1uwsoijDYONFFM7QBU3XucKpTZl9IKpzi" alt="Friends"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://lh3.googleusercontent.com/u/0/d/1OzUU1YlsXws1et4Ys__N_eG57YOSzcRp" alt="Friends"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://lh3.googleusercontent.com/u/0/d/1QH_G48wc2lOQEjLK2c8zc4W-QTrpB7pD" alt="Friends"></div>
-      <div class="galleryItem" data-category="friends"><img src="https://lh3.googleusercontent.com/d/1pO3F1PBeZq150QOjkJx8SSZat_RSPigx" alt="Friends"></div>
-      <div class="galleryItem" data-category="pets"><img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/489019952_4020557464883385_8039127536714953881_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=6Tnk--T4QKEQ7kNvwGfk-zH&_nc_oc=Adn2wzH9o62OnSCco15aL6rNkWZn_vDs5NEqNjSlhSjAnxB9XVoZV-EAoHvRGEEhLqk&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=CjXwKTeSGHsdvBOmb9idmA&oh=00_AfqSyLKifFDdaOh80Wec2pgvRvaDiid2zNvDGFuPjHcXyA&oe=695D7DBA" alt="Pets"></div>
-      <div class="galleryItem" data-category="pets"><img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/483655791_3995119987427133_594727284187552555_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=49o9YIhoa2oQ7kNvwHMpBPJ&_nc_oc=AdmmCrXp9MBg93W1eilAoxrAQ4JJKOqPPhK4B-19HuHhsmQNOzv5x1-ftH7deMVAObo&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=PzMTLcFgMlN4AnH9d6ET3g&oh=00_AfrdEEu_RS96UaLZF9t_jVcL3QXE8O3FnRYTg2tcB2rmbQ&oe=695D7EFF" alt="Pets"></div>
-      <div class="galleryItem" data-category="pets"><img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/484287279_3995111650761300_6912358988173367514_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=_cH8f4jA_MIQ7kNvwE9tEo5&_nc_oc=AdnfdHbLgzU7uCg1rrFzL9tL4Kz8B7aP81iMx9TFDWmgqJJZyqRKJzlx3ahGzdRFIIk&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=m_I86nH90YYlVMAzFNqNEQ&oh=00_AfrN9ceQSibFjjk5DCVlP05TT7CAON2OkxNZ8fI6RqLCxw&oe=695D89CB" alt="Pets"></div>
-      <div class="galleryItem" data-category="pets"><img src="https://scontent.fmnl17-3.fna.fbcdn.net/v/t39.30808-6/483651899_3995111704094628_797436125869661874_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=lAnS3a4L-10Q7kNvwFNHfA6&_nc_oc=AdkU7yXN4IcDJ-lbhum0J5kcrjjYGnMTZyLE5X7nuqKPxoIP5xLLB6SKs5XUX7fejPE&_nc_zt=23&_nc_ht=scontent.fmnl17-3.fna&_nc_gid=hkyIrTmGEzi_pohlxa_kEQ&oh=00_AfryyhlAzN2foBOpMmfM_QKj1O4oBMujZezspr9QSGETwg&oe=695D5F44" alt="Pets"></div>
-      <div class="galleryItem" data-category="pets"><img src="https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-6/480983741_3975664066039392_7784157440755742361_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=833d8c&_nc_ohc=KwQxFRS6eH8Q7kNvwGOOIdL&_nc_oc=AdlnAfEtjikzkRHkyVhkuBY6_5tKcDTMJfOAAYS-57LwxsDUDrsaVBx5i2MPzKHs_k4&_nc_zt=23&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=_rrvEkVXip7XPA8mAyQKQQ&oh=00_AfrHRcZsjIb4L3Z_AY-baW2EAbGT-uIAaS21UMMwFhzWrg&oe=695D67DC" alt="Pets"></div>
-      <div class="galleryItem" data-category="pets"><img src="https://scontent.fmnl17-8.fna.fbcdn.net/v/t39.30808-6/475487042_3959734234299042_4048198314262883037_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_ohc=c9eT3g2AomIQ7kNvwFFCKPX&_nc_oc=AdkQFiXYcsH4dcZs0WlAhiPQRv5G63WlDTrl3waCWZNOvNzRuIEl4r4GGVHCXR9Ysrk&_nc_zt=23&_nc_ht=scontent.fmnl17-8.fna&_nc_gid=E8ycsMli9lHTAMQqhRNY1A&oh=00_Afq5YKbQF_aKk7-2gN1GDJydGEgeqS3pJxu714Usn0kM5g&oe=695D682C" alt="Pets"></div>
-      <div class="galleryItem" data-category="pets"><img src="https://scontent.fmnl17-6.fna.fbcdn.net/v/t39.30808-6/476951570_3966740946931704_801586110248924189_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_ohc=yIOgSsMrcmoQ7kNvwFhMfDR&_nc_oc=Adn5fcbhBlbseaNDsHrBxYKBdgnjyCoIffHX47nU3AFstE3sfpuEopkRAPbQNH6E59k&_nc_zt=23&_nc_ht=scontent.fmnl17-6.fna&_nc_gid=NRjftv_GJBXk6WElsUq-2A&oh=00_AfpYJR5UqxdXIsIekA9VBdvRxWO_kEo5D3PUTEGZGhAuYA&oe=695D6882" alt="Pets"></div>
-    </div>
-
-    <div class="galleryControl">
-      <button id="loadMoreBtn" class="primaryButton">Show More Pictures</button>
+  <section class="skillsSection layoutWidth" id="skills">
+    <h3 class="sectionHeading">My IT Skills Section</h3>
+    <div class="skillsGrid">
+      <div class="skillCard">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" class="skillIcon">
+        <h4>HTML</h4>
+        <p class="skillDesc">Proficient in structuring web content using modern semantic standards.</p>
+      </div>
+      <div class="skillCard">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" class="skillIcon">
+        <h4>CSS</h4>
+        <p class="skillDesc">Experienced in creating responsive layouts and custom styling.</p>
+      </div>
+      <div class="skillCard">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skillIcon">
+        <h4>PYTHON</h4>
+        <p class="skillDesc">Background in writing logic, automation, and core programming concepts.</p>
+      </div>
+      <div class="skillCard">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter" class="skillIcon">
+        <h4>Flutter</h4>
+        <p class="skillDesc">Hands-on experience in cross-platform mobile app development.</p>
+      </div>
+      <div class="skillCard">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" class="skillIcon">
+        <h4>MYSQL</h4>
+        <p class="skillDesc">Knowledgeable in database management and relational data design.</p>
+      </div>
+      <div class="skillCard">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ554zVuSKGygz1sPpFJalHnK_SVHUiFNwqig&s" alt="OutSystems" class="skillIcon">
+        <h4>OutSystems</h4>
+        <p class="skillDesc">Skilled in low-code development for fast enterprise solutions.</p>
+      </div>
+      <div class="skillCard">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQo_PqAUQnugL3R3G9jbNjSeormEJwpJfZtOw&s" alt="PowerApps" class="skillIcon">
+        <h4>Microsoft PowerApps</h4>
+        <p class="skillDesc">Experience utilizing Microsoft’s low-code platform for business apps.</p>
+      </div>
     </div>
   </section>
 
- <section class="socialsSection layoutWidth" id="socials">
+  <section class="socialsSection layoutWidth" id="socials">
     <h3 class="sectionHeading">Connect With Me!</h3>
     <div class="socialsGrid">
-      <a href="https://discord.com/users/541224688387358741" class="socialCard"><h4>Discord</h4><p>Let's chat and play</p></a>
-      <a href="https://www.facebook.com/profile.php?id=61578265403283" class="socialCard"><h4>Facebook</h4><p>Connect with me</p></a>
-      <a href="https://www.instagram.com/jaredchristian_10/" class="socialCard"><h4>Instagram</h4><p>Daily life moments</p></a>
-      <a href="https://www.linkedin.com/in/jared-christian-gatchalian-489b272a5/" class="socialCard"><h4>LinkedIn</h4><p>Professional network</p></a>
-      <a href="https://github.com/JaredPogiGatchalian123" class="socialCard"><h4>GitHub</h4><p>My code projects</p></a>
+      <a href="https://discord.com/users/541224688387358741" class="socialCard">
+        <img src="https://cdn.simpleicons.org/discord/5865F2" alt="Discord" class="socialIcon">
+        <h4>Discord</h4>
+        <p>Let's chat and play</p>
+      </a>
+      <a href="https://www.facebook.com/profile.php?id=61578265403283" class="socialCard">
+        <img src="https://cdn.simpleicons.org/facebook/1877F2" alt="Facebook" class="socialIcon">
+        <h4>Facebook</h4>
+        <p>Connect with me</p>
+      </a>
+      <a href="https://www.instagram.com/jaredchristian_10/" class="socialCard">
+        <img src="https://cdn.simpleicons.org/instagram/E4405F" alt="Instagram" class="socialIcon">
+        <h4>Instagram</h4>
+        <p>Daily life moments</p>
+      </a>
+      <a href="https://www.linkedin.com/in/jared-christian-gatchalian-489b272a5/" class="socialCard">
+        <img src="https://cdn-icons-png.freepik.com/512/2496/2496097.png" alt="LinkedIn" class="socialIcon">
+        <h4>LinkedIn</h4>
+        <p>Professional network</p>
+      </a>
+      <a href="https://github.com/JaredPogiGatchalian123" class="socialCard">
+        <img src="https://cdn.simpleicons.org/github/FFFFFF" alt="GitHub" class="socialIcon">
+        <h4>GitHub</h4>
+        <p>My code projects</p>
+      </a>
     </div>
-</section>
+  </section>
 
   <footer class="miniFooter">
     <div class="layoutWidth">
       <p>© Created by Jared Christian Gatchalian.</p>
     </div>
   </footer>
-
-  <div id="imageModal" class="modal">
-    <span class="close">×</span>
-    <img class="modal-content" id="imgFull">
-    <div id="caption"></div>
-  </div>
 
   <script src="javascript/javascript.js"></script>
 </body>

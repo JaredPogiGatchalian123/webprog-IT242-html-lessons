@@ -1,4 +1,3 @@
-
 * {
   margin: 0;
   padding: 0;
@@ -23,7 +22,101 @@ body {
   padding: 0 30px;
 }
 
-/* Red Ambient Background Glow */
+/* --- ADDED TOP NAVIGATION STYLES --- */
+.topNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+
+.topNav.scrolled {
+  padding: 15px 0;
+  background: rgba(5, 5, 5, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 77, 77, 0.2);
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: 900;
+  color: #ff4d4d;
+  letter-spacing: 1px;
+}
+
+.navLinks {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #a1a1aa;
+  font-weight: 600;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.navLink:hover, .navLink.active {
+  color: #ff4d4d;
+}
+
+/* HAMBURGER TOGGLE */
+.menuToggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: #ff4d4d;
+  transition: 0.3s;
+}
+
+@media (max-width: 768px) {
+  .menuToggle {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .navLinks {
+    position: fixed;
+    right: -100%;
+    top: 0;
+    height: 100vh;
+    width: 70%;
+    background: #050505;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.4s;
+    border-left: 1px solid rgba(255, 77, 77, 0.2);
+  }
+
+  .navLinks.active {
+    right: 0;
+  }
+
+  .menuToggle.is-active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+  .menuToggle.is-active .bar:nth-child(2) { opacity: 0; }
+  .menuToggle.is-active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+}
+
+/* --- YOUR ORIGINAL STYLES --- */
 .pageGlow {
   position: fixed;
   top: 0;
@@ -35,12 +128,12 @@ body {
   z-index: -1;
 }
 
-/* LANDING SECTION */
 .landingSection {
   min-height: 100vh;
   display: flex;
   align-items: center;
   gap: 60px;
+  padding-top: 80px;
 }
 
 .landingContent {
@@ -77,6 +170,11 @@ body {
   margin-bottom: 40px;
 }
 
+.ctaButtons {
+  display: flex;
+  gap: 20px;
+}
+
 .primaryButton {
   padding: 16px 45px;
   background-color: #ff4d4d;
@@ -94,28 +192,46 @@ body {
   box-shadow: 0 10px 25px rgba(255, 77, 77, 0.4);
 }
 
-/* MY CHARACTER ANIMATION FLOAT */
+.secondaryButton {
+  padding: 16px 45px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 2px solid #ff4d4d;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.secondaryButton:hover {
+  background-color: rgba(255, 77, 77, 0.1);
+  transform: translateY(-3px);
+}
+
 .myCharacter {
   flex: 0.8;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .characterImage {
   width: 100%;
   max-width: 450px;
-  filter: drop-shadow(0 0 35px rgba(255, 77, 77, 0.3));
-  animation: floatEffect 6s ease-in-out infinite;
+  filter: drop-shadow(0 0 35px rgba(255, 77, 77, 0.4)); 
+  animation: floatEffect 5s ease-in-out infinite;
 }
 
 @keyframes floatEffect {
-  0%, 100% { transform: translateY(0); }
-  50%  { transform: translateY(-20px); }
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-25px); }
+  100% { transform: translateY(0px); }
 }
 
 .aboutSection, 
 .gamesSection, 
-.gallerySection, 
+.skillsSection, 
 .socialsSection {
   padding: 120px 0;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -128,7 +244,6 @@ body {
   font-weight: 800;
 }
 
-/* ABOUT GRID */
 .aboutGrid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -145,7 +260,6 @@ body {
 
 .infoCard:hover {
   border-color: #ff4d4d;
-  transform: translateY(-5px);
   background: rgba(255, 77, 77, 0.02);
 }
 
@@ -167,7 +281,6 @@ body {
   color: #a1a1aa;
 }
 
-/* THIS IS FOR MY GAMES GRID */
 .interestsWrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -188,7 +301,6 @@ body {
 
 .interestCard:hover {
   border-color: #ff4d4d;
-  transform: translateY(-8px);
 }
 
 .gameIcon {
@@ -199,69 +311,46 @@ body {
   filter: drop-shadow(0 0 10px rgba(255, 77, 77, 0.2));
 }
 
-/* Filterable Image */
-.galleryNav {
-  display: flex;
-  gap: 15px;
-  margin-bottom: 30px;
-  flex-wrap: wrap;
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
-.filterBtn {
-  background: transparent;
+.skillCard {
+  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #a1a1aa;
-  padding: 10px 25px;
-  border-radius: 30px;
-  cursor: pointer;
+  padding: 30px;
+  border-radius: 16px;
+  text-align: center;
   transition: 0.3s;
 }
 
-.filterBtn.active, 
-.filterBtn:hover {
+.skillCard:hover {
   border-color: #ff4d4d;
-  color: #ff4d4d;
   background: rgba(255, 77, 77, 0.05);
 }
 
-.galleryGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 15px;
+.skillIcon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 15px;
+  object-fit: contain;
 }
 
-.galleryItem {
-  overflow: hidden;
-  border-radius: 12px;
-  height: 300px;
-  transition: 0.4s;
-  cursor: pointer;
+.skillCard h4 {
+  color: #ff4d4d;
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.galleryItem img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: 0.5s;
+.skillDesc {
+  color: #a1a1aa;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
-.galleryItem:hover img {
-  transform: scale(1.1);
-  opacity: 1;
-}
-
-.galleryItem.hide, 
-.galleryItem.hidden-moment {
-  display: none;
-}
-
-.galleryControl {
-  text-align: center;
-  margin-top: 40px;
-}
-
-/* SOCIALS SECTION */
 .socialsGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -279,33 +368,32 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #ffffff; 
 }
 
 .socialCard:hover {
   border-color: #ff4d4d;
   background: rgba(255, 77, 77, 0.05);
-  transform: translateY(-8px);
   box-shadow: 0 10px 30px rgba(255, 77, 77, 0.1);
 }
 
 .socialCard .socialIcon {
-  font-size: 32px;
+  width: 40px;
+  height: 40px;
   margin-bottom: 15px;
-  display: block;
 }
 
 .socialCard h4 {
-  color: #ff4d4d;
+  color: #ffffff; 
   font-size: 20px;
   margin-bottom: 5px;
 }
 
 .socialCard p {
-  color: #a1a1aa;
+  color: #ffffff; 
   font-size: 14px;
 }
 
-/* THIS IS FOR THE FOOTER AND IMAGE VIEWER */
 .miniFooter {
   padding: 40px 0;
   text-align: center;
@@ -313,89 +401,18 @@ body {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  padding-top: 50px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(10px);
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  width: auto;
-  max-width: 90%;
-  height: 80vh; 
-  object-fit: contain; 
-  border-radius: 10px;
-  border: 2px solid #ff4d4d;
-  animation: zoomIn 0.3s ease;
-}
-
-@keyframes zoomIn {
-  from {transform: scale(0.5); opacity: 0;}
-  to {transform: scale(1); opacity: 1;}
-}
-
-.close {
-  position: absolute;
-  top: 20px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.close:hover {
-  color: #ff4d4d;
-}
-
-#caption {
-  margin: auto;
-  display: block;
-  width: 80%;
-  text-align: center;
-  color: #ccc;
-  padding: 10px 0;
-  font-size: 20px;
-}
-
-/* THIS IS FOR MOBILE RESPONSIVE */
-@media (max-width: 1100px) {
-  .interestsWrapper { grid-template-columns: repeat(3, 1fr); }
-}
-
-@media (max-width: 900px) {
-  .aboutGrid { grid-template-columns: 1fr; }
-}
-
+@media (max-width: 1100px) { .interestsWrapper { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 900px) { .aboutGrid { grid-template-columns: 1fr; } }
 @media (max-width: 768px) {
   .interestsWrapper { grid-template-columns: repeat(2, 1fr); }
-  .landingSection {
-    flex-direction: column;
-    text-align: center;
-    padding: 100px 0;
-  }
+  .landingSection { flex-direction: column; text-align: center; padding: 100px 0; }
   .displayName { font-size: 60px; }
   .myCharacter { order: -1; }
   .sectionHeading { font-size: 42px; }
+  .ctaButtons { justify-content: center; }
 }
-
 @media (max-width: 480px) {
   .interestsWrapper { grid-template-columns: 1fr; }
   .socialsGrid { grid-template-columns: 1fr; }
-  
-  .modal-content {
-    width: 95%;
-    height: auto;
-    max-height: 70vh;
-  }
+  .ctaButtons { flex-direction: column; align-items: center; }
 }
