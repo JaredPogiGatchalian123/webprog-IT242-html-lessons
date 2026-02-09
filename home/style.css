@@ -1,0 +1,99 @@
+body {
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    color: #d63384;
+    text-align: center;
+}
+
+.script-font {
+    font-family: 'Pacifico', cursive;
+}
+
+#score {
+    font-size: 1.5rem;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.4);
+    padding: 5px 20px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.heart {
+    position: absolute;
+    font-size: 2.5rem;
+    cursor: pointer;
+    filter: drop-shadow(0 0 5px white);
+    animation: float 3s ease-in-out infinite;
+    user-select: none;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(10deg); }
+}
+
+#valentine-card, #success-screen {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px;
+    border-radius: 30px;
+    border: 4px solid #ff85a1;
+    box-shadow: 0 15px 35px rgba(214, 51, 132, 0.2);
+    z-index: 100;
+    max-width: 90%;
+}
+
+.envelope { font-size: 4rem; margin-bottom: 10px; }
+
+button {
+    background: #ff4d6d;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 10px;
+}
+
+#no-btn {
+    background: #ffb3c1;
+}
+
+.transformed-yes {
+    background-color: #ff4d6d !important;
+    transform: scale(1.1);
+}
+
+.image-box {
+    margin-top: 20px;
+    border: 10px solid white;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    max-width: 300px;
+    overflow: hidden;
+    display: inline-block;
+}
+
+#valentine-photo {
+    width: 100%;
+    display: block;
+}
+
+.bounce {
+    animation: bounce 0.8s infinite alternate;
+}
+
+@keyframes bounce {
+    from { transform: translateY(0); }
+    to { transform: translateY(-10px); }
+}
+
+.hidden { display: none !important; }

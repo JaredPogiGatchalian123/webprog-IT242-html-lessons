@@ -1,13 +1,39 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For You ❤️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 <body>
+    <div id="player"></div>
 
-<h1>This is AP!C</h1>
-<p>This is my WEBPROG!</p>
-  <p>My name is Jared!</p>
+    <div id="game-container">
+        <h1 id="main-text">Catch 5 hearts to hear a song...</h1>
+        <div id="score">Hearts: 0</div>
+        
+        <div id="heart-zone"></div>
+        
+        <div id="valentine-card" class="hidden">
+            <div class="envelope">💖</div>
+            <h2 class="script-font">Will you be my Valentine?</h2>
+            <div class="buttons">
+                <button id="yes-btn">YES!</button>
+                <button id="no-btn">No</button>
+            </div>
+        </div>
 
+        <div id="success-screen" class="hidden">
+            <h1 class="bounce script-font">YAY! ❤️ See you on the 14th!</h1>
+            <div class="image-box">
+                <img id="valentine-photo" src="https://via.placeholder.com/300x400?text=Insert+Your+Photo+Link+Here" alt="Our Photo">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <script src="script.js"></script>
 </body>
 </html>
