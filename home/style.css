@@ -1,5 +1,5 @@
 body {
-    background: linear-gradient(180deg, #ff85a1 0%, #a4455d 100%);
+    background: linear-gradient(135deg, #ffafbd 0%, #ffc3a0 100%);
     font-family: 'Poppins', sans-serif;
     margin: 0;
     height: 100vh;
@@ -7,95 +7,80 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    color: white;
+    color: #d63384;
 }
 
-.script-font { font-family: 'Pacifico', cursive; font-size: 2rem; }
+.hidden { display: none !important; }
 
-#score-pill {
-    background: white;
-    color: #a4455d;
-    padding: 10px 30px;
-    border-radius: 50px;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
+#ui-layer { position: absolute; top: 20px; z-index: 10; }
 
-.heart { position: absolute; font-size: 2.5rem; cursor: pointer; transition: 0.2s; }
+.heart { position: absolute; font-size: 3rem; cursor: pointer; user-select: none; z-index: 5; }
 
-/* The Card Styling */
+/* Valentine Card Styling */
 #valentine-card {
-    background: rgba(255, 133, 161, 0.8);
-    border: 10px solid #ffb3c1;
-    border-radius: 40px;
-    padding: 40px;
+    background: #2c3e50; /* Darker background like your reference */
+    border: 5px solid #ff4d6d;
+    border-radius: 20px;
+    padding: 30px;
+    width: 320px;
     position: relative;
-    width: 350px;
     text-align: center;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    box-shadow: 0 0 30px rgba(255, 77, 109, 0.5);
 }
 
 .photo {
     position: absolute;
-    width: 100px;
-    height: 130px;
+    width: 110px;
+    height: 140px;
+    border: 4px solid white;
     object-fit: cover;
-    border: 5px solid white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    z-index: 5;
 }
-
-.photo-left { top: -20px; left: -40px; transform: rotate(-15deg); }
-.photo-right { bottom: -20px; right: -40px; transform: rotate(15deg); }
+.photo-left { top: -40px; left: -40px; transform: rotate(-10deg); }
+.photo-right { bottom: -20px; right: -40px; transform: rotate(10deg); }
 
 .neon-text {
-    font-size: 3rem;
-    margin: 0;
+    font-size: 2.5rem;
     color: white;
-    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d, 0 0 40px #ff4d6d;
+    text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d;
+    margin: 10px 0;
 }
 
 .neon-heart-frame {
-    width: 150px;
-    height: 150px;
     margin: 20px auto;
-    border: 4px solid #ff4d6d;
-    border-radius: 50%; /* You can use a heart-clip path here too */
+    width: 120px;
+    height: 120px;
+    border: 3px solid #ff4d6d;
+    border-radius: 50%;
     display: flex;
-    justify-content: center;
     align-items: center;
-    box-shadow: 0 0 20px #ff4d6d, inset 0 0 20px #ff4d6d;
+    justify-content: center;
+    box-shadow: 0 0 15px #ff4d6d;
 }
 
-.inner-heart { font-size: 5rem; animation: pulse 1s infinite; }
+.inner-heart { font-size: 4rem; animation: pulse 1s infinite; }
 
-@keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-    100% { transform: scale(1); }
+.btn-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.checkbox-box {
+    width: 40px;
+    height: 40px;
+    border: 3px solid white;
+    margin-right: 15px;
 }
 
 button {
-    width: 100%;
-    background: white;
-    color: #ff4d6d;
+    background: none;
     border: none;
-    padding: 12px;
-    margin: 5px 0;
-    border-radius: 10px;
-    font-size: 1.5rem;
+    color: white;
+    font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    text-shadow: 0 0 10px #ff4d6d;
 }
 
-#no-btn { background: #ffeef2; color: #a4455d; }
-
-.hidden { display: none !important; }
-
-/* Success Screen */
-.final-photo-frame img {
-    width: 250px;
-    border: 10px solid white;
-    border-radius: 20px;
-}
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
