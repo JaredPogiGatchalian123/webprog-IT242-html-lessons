@@ -3,43 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine's Surprise</title>
+    <title>Valentine's Surprise ❤️</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="player" style="position: absolute; top: -1000px;"></div>
+    <div id="player"></div>
 
     <div id="game-container">
         <div id="ui-layer">
-            <h1 class="main-title">Catch 5 hearts...</h1>
-            <div id="score-pill">Hearts: <span id="score">0</span></div>
+            <h1 class="game-text">Catch 5 hearts to reveal a surprise...</h1>
+            <div id="score-box">Hearts: <span id="score">0</span></div>
         </div>
         
         <div id="heart-zone"></div>
 
         <div id="valentine-card" class="hidden">
+            <img src="PHOTO_TOP_LEFT.jpg" class="photo top-left">
+            <img src="PHOTO_BOTTOM_RIGHT.jpg" class="photo bottom-right">
+            
             <div class="card-content">
-                <img src="YOUR_PHOTO_1.jpg" class="photo photo-left">
-                <img src="YOUR_PHOTO_2.jpg" class="photo photo-right">
-                
                 <h2 class="script-font">will you be my</h2>
-                <h1 class="neon-text">VALENTINE</h1>
+                <h1 class="neon-title">VALENTINE</h1>
                 
-                <div class="neon-heart-frame">
-                    <div class="inner-heart">❤️</div>
+                <div class="neon-heart-container">
+                    <div class="neon-heart">❤️</div>
                 </div>
 
-                <div class="button-zone">
-                    <div class="btn-container"><div class="checkbox"></div><button id="yes-btn">YES</button></div>
-                    <div class="btn-container"><div class="checkbox"></div><button id="no-btn">No</button></div>
+                <div class="selection-area">
+                    <p class="instruction">PLEASE SELECT BELOW</p>
+                    
+                    <div class="choice-row">
+                        <div class="checkbox"></div>
+                        <button id="yes-btn" class="neon-btn">YES</button>
+                    </div>
+                    
+                    <div class="choice-row">
+                        <div class="checkbox"></div>
+                        <button id="no-btn" class="neon-btn">YES</button> 
+                    </div>
                 </div>
             </div>
         </div>
 
         <div id="success-screen" class="hidden">
             <h1 class="script-font bounce">YAY! ❤️ See you on the 14th!</h1>
-            <img src="YOUR_FINAL_PHOTO.jpg" class="final-img">
+            <img src="FINAL_PHOTO.jpg" class="reveal-img">
         </div>
     </div>
 
