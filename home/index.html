@@ -3,32 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For You ❤️</title>
+    <title>For My Valentine ❤️</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="player"></div>
 
     <div id="game-container">
-        <h1 id="main-text">Catch 5 hearts to hear a song...</h1>
-        <div id="score">Hearts: 0</div>
+        <div id="ui-layer">
+            <h1 class="main-title">Catch 5 hearts to reveal a surprise...</h1>
+            <div id="score-pill">Hearts: <span id="score">0</span></div>
+        </div>
         
         <div id="heart-zone"></div>
-        
+
         <div id="valentine-card" class="hidden">
-            <div class="envelope">💖</div>
-            <h2 class="script-font">Will you be my Valentine?</h2>
-            <div class="buttons">
-                <button id="yes-btn">YES!</button>
-                <button id="no-btn">No</button>
+            <div class="card-content">
+                <img src="YOUR_PHOTO_1.jpg" class="photo photo-left" alt="Us">
+                <img src="YOUR_PHOTO_2.jpg" class="photo photo-right" alt="Us">
+                
+                <h2 class="script-font text-white">will you be my</h2>
+                <h1 class="neon-text">VALENTINE</h1>
+                
+                <div class="neon-heart-frame">
+                    <div class="inner-heart">❤️</div>
+                </div>
+
+                <div class="button-zone">
+                    <p class="select-text">PLEASE SELECT BELOW</p>
+                    <div class="btn-row">
+                        <button id="yes-btn">YES</button>
+                    </div>
+                    <div class="btn-row">
+                        <button id="no-btn">No</button>
+                    </div>
+                </div>
             </div>
         </div>
 
         <div id="success-screen" class="hidden">
-            <h1 class="bounce script-font">YAY! ❤️ See you on the 14th!</h1>
-            <div class="image-box">
-                <img id="valentine-photo" src="https://via.placeholder.com/300x400?text=Insert+Your+Photo+Link+Here" alt="Our Photo">
+            <h1 class="script-font bounce">YAY! ❤️ See you on the 14th!</h1>
+            <div class="final-photo-frame">
+                <img src="YOUR_FINAL_PHOTO.jpg" alt="Success Photo">
             </div>
         </div>
     </div>
