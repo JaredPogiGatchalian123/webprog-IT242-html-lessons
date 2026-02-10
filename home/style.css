@@ -90,6 +90,23 @@ body {
     height: 40px;
     border: 3px solid white;
     margin-right: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+/* The fill effect when clicked */
+.checkbox.checked {
+    background: #ff4d6d;
+    position: relative;
+}
+
+.checkbox.checked::after {
+    content: '✓';
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .neon-btn {
@@ -107,9 +124,9 @@ body {
 
 @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
-/* Success Screen - FIXING READABILITY */
+/* Success Screen */
 .success-text {
-    color: #ff4d6d; /* Darker pink for contrast */
+    color: #ff4d6d; 
     text-shadow: 2px 2px 0px white, 0 0 15px rgba(255,255,255,0.8);
     font-size: 2.5rem;
     z-index: 100;
@@ -129,11 +146,9 @@ body {
 .bounce { animation: bounce 0.8s infinite alternate; }
 @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-15px); } }
 
-/* Confetti particles */
 .confetti {
     position: absolute;
     width: 10px;
     height: 10px;
-    background-color: #f00;
     z-index: 1000;
 }

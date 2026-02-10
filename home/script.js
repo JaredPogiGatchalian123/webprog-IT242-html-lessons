@@ -31,7 +31,6 @@ function createHeart() {
     document.getElementById('heart-zone').appendChild(heart);
 }
 
-// Confetti Effect
 function launchConfetti() {
     for (let i = 0; i < 50; i++) {
         const confetti = document.createElement('div');
@@ -54,21 +53,35 @@ function launchConfetti() {
     }
 }
 
-// Hover transformation: No button becomes "YES"
 const noBtn = document.getElementById('no-btn');
+const yesBtn = document.getElementById('yes-btn');
+const check1 = document.getElementById('check1');
+const check2 = document.getElementById('check2');
+
 noBtn.onmouseenter = () => {
     noBtn.innerHTML = "YES";
     noBtn.style.color = "#ff4d6d";
     noBtn.style.textShadow = "0 0 10px white";
 };
 
-const handleFinal = () => {
-    document.getElementById('valentine-card').classList.add('hidden');
-    document.getElementById('success-screen').classList.remove('hidden');
-    launchConfetti(); // ADDED EFFECT
+const handleFinal = (checkboxId) => {
+    // Fill the checkbox
+    const cb = document.getElementById(checkboxId);
+    cb.classList.add('checked');
+
+    // Small delay to show the checkmark before switching screens
+    setTimeout(() => {
+        document.getElementById('valentine-card').classList.add('hidden');
+        document.getElementById('success-screen').classList.remove('hidden');
+        launchConfetti();
+    }, 400);
 };
 
-document.getElementById('yes-btn').onclick = handleFinal;
-noBtn.onclick = handleFinal;
+// Clicking the button OR the checkbox triggers the win
+yesBtn.onclick = () => handleFinal('check1');
+check1.onclick = () => handleFinal('check1');
+
+noBtn.onclick = () => handleFinal('check2');
+check2.onclick = () => handleFinal('check2');
 
 createHeart();
