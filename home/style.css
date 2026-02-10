@@ -12,7 +12,7 @@ body {
 .hidden { display: none !important; }
 
 /* Game UI */
-.game-text { color: #d63384; font-size: 1.2rem; }
+.game-text { color: #d63384; font-size: 1.2rem; text-shadow: 1px 1px 2px white; }
 #score-box { 
     background: white; 
     color: #ff4d6d; 
@@ -20,11 +20,12 @@ body {
     border-radius: 50px; 
     display: inline-block;
     font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* The Main Card */
 #valentine-card {
-    background: #2d1b2d; /* Dark pinkish-purple background */
+    background: #2d1b2d;
     width: 350px;
     padding: 40px 20px;
     border: 3px solid #ff4d6d;
@@ -32,9 +33,14 @@ body {
     position: relative;
     text-align: center;
     box-shadow: 0 0 30px rgba(255, 77, 109, 0.5);
+    animation: scaleUp 0.5s ease;
 }
 
-/* Tilted Photos Placement */
+@keyframes scaleUp {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
 .photo {
     position: absolute;
     width: 100px;
@@ -42,6 +48,7 @@ body {
     border: 4px solid white;
     object-fit: cover;
     z-index: 10;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 .top-left { top: -30px; left: -40px; transform: rotate(-10deg); }
 .bottom-right { bottom: -20px; right: -30px; transform: rotate(10deg); }
@@ -56,7 +63,6 @@ body {
     letter-spacing: 2px;
 }
 
-/* Central Neon Heart */
 .neon-heart-container {
     width: 150px;
     height: 150px;
@@ -70,7 +76,6 @@ body {
 }
 .neon-heart { font-size: 5rem; animation: pulse 1s infinite; }
 
-/* Selection Area */
 .instruction { color: white; font-size: 0.8rem; margin-top: 20px; text-align: left; margin-left: 20px; }
 
 .choice-row {
@@ -95,11 +100,40 @@ body {
     font-weight: bold;
     cursor: pointer;
     text-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d;
+    transition: 0.3s;
 }
+
+.neon-btn:hover { transform: scale(1.1); }
 
 @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.1); } }
 
-/* Success Screen */
-.reveal-img { width: 300px; border: 8px solid white; border-radius: 10px; }
+/* Success Screen - FIXING READABILITY */
+.success-text {
+    color: #ff4d6d; /* Darker pink for contrast */
+    text-shadow: 2px 2px 0px white, 0 0 15px rgba(255,255,255,0.8);
+    font-size: 2.5rem;
+    z-index: 100;
+}
+
+.photo-wrap {
+    margin-top: 20px;
+    padding: 10px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    display: inline-block;
+}
+
+.reveal-img { width: 300px; border-radius: 5px; display: block; }
+
 .bounce { animation: bounce 0.8s infinite alternate; }
 @keyframes bounce { from { transform: translateY(0); } to { transform: translateY(-15px); } }
+
+/* Confetti particles */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00;
+    z-index: 1000;
+}
